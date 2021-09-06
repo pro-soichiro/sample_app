@@ -8,14 +8,14 @@ class TodolistsController < ApplicationController
     @list = List.new(list_params)
 
     if @list.save
-      redirect_to todogitgitlist_path(@list.id)
+      redirect_to todolist_path(@list.id)
     else
       render :new
     end
   end
 
   def index
-    @list = List.all
+    @lists = List.all
   end
 
   def show
